@@ -1,0 +1,35 @@
+appId: com.floorplan.rooms
+productName: FloorPlan Rooms
+copyright: Copyright © 2025
+
+directories:
+  output: release
+  buildResources: build
+
+files:
+  - dist/**/*
+  - dist-electron/**/*
+  - package.json
+
+mac:
+  category: public.app-category.productivity
+  target:
+    - target: dmg
+      arch:
+        - x64
+        - arm64
+  icon: build/icon.icns
+
+dmg:
+  title: "FloorPlan Rooms"
+  contents:
+    - x: 130
+      y: 220
+    - x: 410
+      y: 220
+      type: link
+      path: /Applications
+
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
